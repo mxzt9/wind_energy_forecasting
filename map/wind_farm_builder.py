@@ -11,19 +11,24 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 from PIL import Image
 
 # ============================================================
 # НАСТРОЙКИ
 # ============================================================
 
-IMAGE_PATH = "image.png"          # путь к картинке
+BASE_DIR = Path(__file__).resolve().parent
+WIND_DATA_DIR = BASE_DIR / "wind_data"
+WIND_VIZ_DIR = BASE_DIR / "wind_viz"
+
+IMAGE_PATH = WIND_VIZ_DIR / "wind_farm_map.png"          # путь к картинке
 N_CONTROL_POINTS = 5                # минимум 4, лучше 5-8
 N_TURBINES = 26                      # сколько ветряков будешь кликать
 
-OUTPUT_TURBINES_CSV = "clicked_turbines_latlon.csv"
-OUTPUT_GCP_CSV = "control_points.csv"
-OUTPUT_IMAGE = "georef_turbines_result.png"
+OUTPUT_TURBINES_CSV = WIND_DATA_DIR / "wind_farm_cords.csv"
+OUTPUT_GCP_CSV = WIND_DATA_DIR / "wind_farm_anchors.csv"
+OUTPUT_IMAGE = WIND_VIZ_DIR / "wind_farm_marked_map.png"
 
 # ============================================================
 # ФУНКЦИИ ПРОЕКЦИИ WEB MERCATOR
