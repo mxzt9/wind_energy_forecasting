@@ -1,0 +1,17 @@
+# Python / notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local IDE
+.vscode/
+
+# Generated model logs and run artifacts
+outputs/data/
+outputs/datasets/
+outputs/figures/
+outputs/models/
+outputs/reports/
+outputs/**/data/
+outputs/**/figures/
+outputs/**/reports/
